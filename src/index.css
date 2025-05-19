@@ -65,4 +65,23 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
+  .App {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content auto auto;
+    grid-template-areas: "header"
+    "content"
+  }
+
+  @media-only screen and (min-width: 600px){
+    .App{
+      grid-template-columns: 25% 75%;
+      grid-template-rows: min-content auto
+      grid-template-areas: "header"
+    "content"
+    }
+  }
 }
+
+
