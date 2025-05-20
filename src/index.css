@@ -83,6 +83,13 @@ button:focus-visible {
     }
   }
 
+  @media screen and (max-width: 768px) {
+    .article-card, .comment-card {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
   .article-image {
     width: 100%;
     height: auto;
@@ -90,6 +97,33 @@ button:focus-visible {
     margin: 0 auto;
     max-width: 75vw; 
   }
+}
+
+.comments-list {
+  margin-top: 25px;
+  padding: 12px;
+  border-top: 1px solid olive;
+  background-color: #ffffff;
+}
+
+.comment-card {
+  background-color: rgb(244, 244, 238);
+  border-bottom: 3px solid olive;
+  border-top: 3px solid olive;
+  margin-bottom: 17px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0.1, 0.1);
+}
+
+.article-card {
+  background-color: rgb(244, 244, 238);
+  border-bottom: 4px solid olive;
+  border-top: 4px solid olive;
+  margin-bottom: 17px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0.1, 0.1);
 }
 
 

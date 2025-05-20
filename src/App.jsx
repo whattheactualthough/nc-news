@@ -4,6 +4,7 @@ import "./App.css";
 import ArticleList from "./ArticleList";
 import ArticlePage from "./ArticlePage";
 import Header from "./Header";
+import Comments from "./Comments";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path= "/" element = {<ArticleList/>}/>
         <Route path= "/articles/:article_id" element={<ArticlePage />}/>
+        <Route path= "/articles/:article_id/comments" element={<Comments/>}/>
       </Routes>
     </div>
 

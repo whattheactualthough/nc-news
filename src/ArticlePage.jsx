@@ -5,6 +5,7 @@ import LoadingSpinner from "../LoadingSpinner";
 import { GoChevronDown } from "react-icons/go";
 import { GoChevronUp } from "react-icons/go";
 import { GoComment } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const ArticlePage = () => {
   const { article_id } = useParams();
@@ -39,9 +40,12 @@ const ArticlePage = () => {
         ></img>
         <h3> author: {article.author}</h3>
         <p> topic: {article.topic}</p>
+        <p> added: {article.created_at}</p>
         <p>{article.body}</p>
+        <Link to = {`/articles/${article_id}/comments`}>
         <GoComment className="comment-img" role="img" aria-label="comments" />
         <span>{article.comment_count}</span>
+        </Link>
         <GoChevronDown className="down-vote" role="img" aria-label="dislike" />
         <GoChevronUp className="up-vote" role="img" aria-label="like" />
         <span>votes: {article.votes}</span>
