@@ -65,6 +65,7 @@ const Votes = ({ currentVotes, articleId }) => {
           aria-label="dislike"
         />
       </button>
+      <p>{hasVoted? "you have voted on this article" : null}</p>
       <span>votes: {votes}</span>
       <p> {isError? `${errorMessage}` : null}</p>
     </div>
