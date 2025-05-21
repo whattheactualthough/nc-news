@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { getArticleById } from "../api";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner";
-import { GoChevronDown } from "react-icons/go";
-import { GoChevronUp } from "react-icons/go";
+
 import { GoComment } from "react-icons/go";
 import { Link } from "react-router-dom";
+import Votes from "./Votes";
 
 const ArticlePage = () => {
   const { article_id } = useParams();
@@ -46,9 +46,8 @@ const ArticlePage = () => {
         <GoComment className="comment-img" role="img" aria-label="comments" />
         <span>{article.comment_count}</span>
         </Link>
-        <GoChevronDown className="down-vote" role="img" aria-label="dislike" />
-        <GoChevronUp className="up-vote" role="img" aria-label="like" />
-        <span>votes: {article.votes}</span>
+        <Votes currentVotes = {article.votes} articleId = {article.article_id}/>
+        
       </div>
     );
   };

@@ -126,4 +126,21 @@ button:focus-visible {
   box-shadow: 0 3px 4px rgba(0, 0, 0.1, 0.1);
 }
 
+.up-vote:hover {
+  color: olive;
+  transform: scale(1.4);
+ 
+}
+
+/* .up/down-vote.clicked{
+ curser: not-allowed;
+ color: grey
+ add box shadow and background colour 
+} */
+
+.down-vote:hover {
+  color: olive;
+  transform: scale(1.4);
+}
+
 
