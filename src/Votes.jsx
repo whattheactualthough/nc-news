@@ -55,7 +55,7 @@ const Votes = ({ currentVotes, articleId }) => {
 
       <button
         onClick={handleDownVote}
-        style={{ background: "none", border: "none", cursor: "pointer" }}
+        style={{background: "none", border: "none", cursor: "pointer" }}
         aria-label="Like"
         disabled={hasVoted}
       >
@@ -67,6 +67,7 @@ const Votes = ({ currentVotes, articleId }) => {
       </button>
       <span>votes: {votes}</span>
       <p> {isError? `${errorMessage}` : null}</p>
+      <p>{hasVoted? "You have voted on this article" : null}</p>
     </div>
   );
 };
