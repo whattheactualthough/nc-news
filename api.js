@@ -36,6 +36,16 @@ export const postCommentById = (articleId, comment) => {
     })
 }
 
+export const deleteCommentById = (comment_id) => {
+    console.log(comment_id)
+    return ncNewsApi.delete(`/comments/${comment_id}`).then((res) => {
+        console.log("deleted")
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+
 
 
 
