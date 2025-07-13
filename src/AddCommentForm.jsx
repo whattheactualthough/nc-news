@@ -74,16 +74,19 @@ const AddCommentForm = ({ toggleCommentFormVisibility, articleId }) => {
             disabled={!user.isLoggedIn}
           />
 
-       
-
           <button type="submit" disabled={isSubmitting || !user.isLoggedIn}>
             {isSubmitting ? <LoadingSpinner /> : "Post comment"}
           </button>
 
-             {!user.isLoggedIn && (
+          {!user.isLoggedIn && (
             <p
               className="signin-message"
-              style={{ color: "gray", marginTop: "4px", fontStyle: "italic", fontSize: "12px" }}
+              style={{
+                color: "gray",
+                marginTop: "4px",
+                fontStyle: "italic",
+                fontSize: "12px",
+              }}
             >
               Please sign in to add a comment.
             </p>
