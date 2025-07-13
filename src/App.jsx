@@ -6,6 +6,7 @@ import ArticlePage from "./ArticlePage";
 import Header from "./Header.jsx";
 import Comments from "./Comments";
 import TopicsNavbar from "./TopicsNavbar.jsx";
+import NotFound from "./NotFound.jsx";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -32,6 +33,7 @@ function App() {
           <Route path="/articles/topics/:topic" element={<ArticleList sortBy={sortBy} order={order} />} />
           <Route path="/articles/:article_id" element={<ArticlePage />} />
           <Route path="/articles/:article_id/comments" element={<Comments />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>

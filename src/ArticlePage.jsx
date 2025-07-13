@@ -5,12 +5,14 @@ import LoadingSpinner from "../LoadingSpinner";
 import AddCommentForm from "./AddCommentForm";
 import { GoComment, GoCommentDiscussion } from "react-icons/go";
 import Votes from "./Votes";
+import NotFound from "./NotFound";
 
 const ArticlePage = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [isCommentFormVisible, setIsCommentFormVisible] = useState(false);
+  const [errorStatus, setErrorStatus] = useState();
 
   const toggleCommentFormVisibility = (event) => {
     setIsCommentFormVisible((prevVisibility) => !prevVisibility);
@@ -22,7 +24,11 @@ const ArticlePage = () => {
         setArticle(data);
       })
       .catch((err) => {
-        console.error("Failed to fetch article", err);
+          if (err.response?.status === 404) {
+          setErrorStatus(404);
+        } else {
+          setErrorStatus("generic");
+        }
       })
       .finally(() => {
         setIsLoading(false);
@@ -31,6 +37,10 @@ const ArticlePage = () => {
 
   if (isLoading) {
     return <LoadingSpinner loading={isLoading} />;
+  }
+
+ if (errorStatus === 404) {
+    return <NotFound />;
   }
 
   return (
