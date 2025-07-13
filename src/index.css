@@ -228,4 +228,15 @@ button {
     backgroundColor: "white"
 }
 
+.not-found {
+  text-align: center;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.not-found h2 {
+  font-size: 2rem;
+  color: darkred;
+}
+
 
