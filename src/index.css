@@ -64,7 +64,21 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+    font-size: 14px
   }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    padding: 4px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+  }
+
 
   .App {
     display: grid;
@@ -181,6 +195,37 @@ button {
 
 .comment-card button:hover {
   background-color: darkred;
+}
+
+.container {
+  width: '100%',
+  overflowX: 'auto',
+  whiteSpace: 'nowrap',
+  padding: '10px 0',
+}
+
+.scrollingContainer {
+  display: 'inline-block',
+}
+
+.link {
+  display: 'inline-block',
+  margin: '0 15px',
+  padding: '8px 16px',
+  backgroundColor: '#007bff',
+  color: '#fff',
+  borderRadius: '5px',
+  textDecoration: 'none',
+  fontWeight: 'bold',
+  transition: 'background-color 0.3s',
+}
+
+.topics-list{
+    maxHeight: "100px",
+    maxWidth: "200px",
+    overflowY: "auto",
+    border: "2px solid red",
+    backgroundColor: "white"
 }
 
 

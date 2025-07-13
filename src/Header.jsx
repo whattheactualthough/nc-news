@@ -1,14 +1,18 @@
-import {useContext, useState} from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "./contexts/User";
-import UserCard from "./UserCard";
 import { useUser } from "./contexts/User";
+import TopicsNavbar from "./TopicsNavbar";
+import SortArticles from "./SortArticles";
 
-const Header = () => {
+const Header = ({ sortBy, setSortBy, order, setOrder }) => {
   const { user, logIn, logOut } = useUser();
 
-return (
-    <header key = {user.username}>
+  // conditional if props.selectedTopic filter articles by topic const result = response.data.filter(item => item.class === 'something')
+  return (
+    <header key={user.username}>
+      <div>
+        <p>Welcome {user.isLoggedIn ? user.username : "guest"}</p>
+      </div>
       <div className="user-info">
         {user.isLoggedIn ? (
           <>
@@ -19,12 +23,16 @@ return (
         ) : (
           <button onClick={logIn}>Login</button>
         )}
-        <div>
-        <p>Welcome {user.isLoggedIn ? user.username : "guest"}</p>
-      </div>
+        <SortArticles
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          order={order}
+          setOrder={setOrder}
+        />
+        <TopicsNavbar />
       </div>
     </header>
   );
-}
+};
 
-export default Header
+export default Header;

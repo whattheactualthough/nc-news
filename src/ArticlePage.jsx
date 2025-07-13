@@ -13,7 +13,6 @@ const ArticlePage = () => {
   const [isCommentFormVisible, setIsCommentFormVisible] = useState(false);
 
   const toggleCommentFormVisibility = (event) => {
-    // event.stopPropagation();
     setIsCommentFormVisible((prevVisibility) => !prevVisibility);
   };
 
