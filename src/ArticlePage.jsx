@@ -13,22 +13,28 @@ const ArticlePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isCommentFormVisible, setIsCommentFormVisible] = useState(false);
   const [errorStatus, setErrorStatus] = useState();
+  const isValidId = /^\d+$/.test(article_id);
+  const [error, setError] = useState(null)
 
   const toggleCommentFormVisibility = (event) => {
     setIsCommentFormVisible((prevVisibility) => !prevVisibility);
   };
 
   useEffect(() => {
+    if (!isValidId) {
+      setError({ code: 400, message: "Invalid article ID" });
+      setIsLoading(false);
+      return;
+    }
     getArticleById(article_id)
       .then((data) => {
         setArticle(data);
       })
       .catch((err) => {
-          if (err.response?.status === 404) {
-          setErrorStatus(404);
-        } else {
-          setErrorStatus("generic");
-        }
+        const code = err.response?.status || 500;
+        const message = err.response?.data?.msg || "Something went wrong.";
+        setError({ code, message });
+        setIsLoading(false);
       })
       .finally(() => {
         setIsLoading(false);
@@ -39,8 +45,8 @@ const ArticlePage = () => {
     return <LoadingSpinner loading={isLoading} />;
   }
 
- if (errorStatus === 404) {
-    return <NotFound />;
+  if (error) {
+    return <NotFound statusCode={error.code} message={error.message} />;
   }
 
   return (
@@ -77,7 +83,7 @@ const ArticlePage = () => {
       {isCommentFormVisible && (
         <AddCommentForm
           toggleCommentFormVisibility={toggleCommentFormVisibility}
-          articleId = {article_id}
+          articleId={article_id}
         />
       )}
 

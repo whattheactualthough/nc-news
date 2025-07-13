@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
+import React from "react";
 
-const NotFound = () => {
+const NotFound = ({ statusCode = 404, message = "Page not found." }) => {
   return (
-    <div className="not-found">
-      <h2>404 - Page Not Found</h2>
-      <p>The page you're looking for doesn't exist.</p>
-      <Link to="/">Go back home</Link>
+    <div className="error-page">
+      <h1>Error {statusCode}</h1>
+      <p>{message}</p>
     </div>
   );
 };
