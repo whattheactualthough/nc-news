@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { GoChevronDown } from "react-icons/go";
 import { GoChevronUp } from "react-icons/go";
 import { patchArticleById } from "../api";
+import { useUser } from "./contexts/User";
 
 const Votes = ({ currentVotes, articleId }) => {
   const [hasVoted, setHasVoted] = useState(false);
   const [votes, setVotes] = useState(currentVotes);
   const [isError, setIsError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("null");
+  const {user} = useUser()
 
   useEffect(() => {
     setVotes(currentVotes);
@@ -29,14 +31,14 @@ const Votes = ({ currentVotes, articleId }) => {
   };
 
   const handleUpVote = () => {
-    if (!hasVoted) {
+    if (!hasVoted && user.isLoggedIn) {
       setVotes((currentVotes) => currentVotes + 1);
       postVote(articleId, 1);
     }
   };
 
   const handleDownVote = () => {
-    if (!hasVoted) {
+    if (!hasVoted && user.isLoggedIn) {
       setVotes(currentVotes - 1);
       postVote(articleId, -1);
     }
@@ -65,6 +67,19 @@ const Votes = ({ currentVotes, articleId }) => {
           aria-label="dislike"
         />
       </button>
+       {!user.isLoggedIn && (
+            <p
+              className="signin-message"
+              style={{
+                color: "gray",
+                marginTop: "4px",
+                fontStyle: "italic",
+                fontSize: "12px",
+              }}
+            >
+              Please sign in to vote on this article.
+            </p>
+          )}
       <p>{hasVoted? "you have voted on this article" : null}</p>
       <span>votes: {votes}</span>
       <p> {isError? `${errorMessage}` : null}</p>
