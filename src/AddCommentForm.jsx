@@ -61,6 +61,7 @@ const AddCommentForm = ({ toggleCommentFormVisibility, articleId }) => {
 
   return (
     <>
+    
       {!status || status === "error" ? (
         <form id="post-comment-form" onSubmit={handleSubmit}>
           <label htmlFor="comment-input-box">What do you think?</label>

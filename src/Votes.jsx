@@ -20,7 +20,6 @@ const Votes = ({ currentVotes, articleId }) => {
     const patchRequest = { inc_votes: voteType };
     patchArticleById(articleId, patchRequest)
       .then((confirmedVotes) => {
-        console.log(confirmedVotes);
       })
       .catch((err) => {
         setVotes((currentVotes) => currentVotes - 1);
@@ -44,6 +43,8 @@ const Votes = ({ currentVotes, articleId }) => {
     }
   };
 
+
+
   return (
     <div>
       <button
@@ -52,7 +53,7 @@ const Votes = ({ currentVotes, articleId }) => {
         aria-label="Like"
         disabled={hasVoted}
       >
-        <GoChevronUp className="up-vote" role="button" aria-label="like" />
+        <GoChevronUp className="up-vote cursor-pointer text-gray-600 hover:text-green-800 transition-transform duration-200 hover:scale-140" role="button" aria-label="like" />
       </button>
 
       <button
@@ -62,28 +63,21 @@ const Votes = ({ currentVotes, articleId }) => {
         disabled={hasVoted}
       >
         <GoChevronDown
-          className="down-vote"
+          className="down-vote cursor-pointer text-gray-600 hover:text-red-800 transition-transform duration-200 hover:scale-140"
           role="button"
           aria-label="dislike"
         />
       </button>
        {!user.isLoggedIn && (
             <p
-              className="signin-message"
-              style={{
-                color: "gray",
-                marginTop: "4px",
-                fontStyle: "italic",
-                fontSize: "12px",
-              }}
+              className="text-sm text-gray-600"
             >
-              Please sign in to vote on this article.
+              Please log in to vote on this article.
             </p>
           )}
-      <p>{hasVoted? "you have voted on this article" : null}</p>
-      <span>votes: {votes}</span>
+          <span className="text-sm text gray-600">votes: {votes}</span>
+      <p className="text-sm text gray-600">{hasVoted? "you have voted on this article" : null}</p>
       <p> {isError? `${errorMessage}` : null}</p>
-      <p>{hasVoted? "You have voted on this article" : null}</p>
     </div>
   );
 };

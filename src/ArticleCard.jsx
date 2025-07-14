@@ -4,6 +4,7 @@ import { GoChevronUp } from "react-icons/go";
 import { GoComment } from "react-icons/go";
 import { useState, useEffect } from "react";
 import { getArticleById } from "../api";
+import Votes from "./Votes";
 
 const ArticleCard = (props) => {
   const [article, setArticle] = useState(null);
@@ -55,9 +56,8 @@ const ArticleCard = (props) => {
           <span className="text-sm">{props.article.comment_count}</span>
         </div>
         <div className="flex items-center justify-between px-4 pb-4 text-gray-600 gap-2">
-          <GoChevronDown className="down-vote cursor-pointer text-gray-600 hover:text-red-800 transition-transform duration-200 hover:scale-125" />
-          <GoChevronUp className="up-vote cursor-pointer text-gray-600 hover:text-green-800 transition-transform duration-200 hover:scale-125" />
-          <span className="text-sm">votes: {props.article.votes}</span>
+          <Votes currentVotes={props.article.votes} articleId={props.article.article_id} />
+          
         </div>
       </div>
       <div className="px-4 pb-4 mt-2">

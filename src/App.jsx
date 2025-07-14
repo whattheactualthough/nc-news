@@ -18,7 +18,6 @@ function App() {
   return (
     <div>
       <div>
-        <h1>NC News</h1>
         <Header
           selectedTopic={selectedTopic}
           sortBy={sortBy}
