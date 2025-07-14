@@ -1,10 +1,15 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  font-family: system-ui; Avenir; Helvetica; Arial; sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255; 255; 255; 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -49,7 +54,7 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
+button:focus;
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
@@ -98,7 +103,7 @@ button:focus-visible {
   }
 
   @media screen and (max-width: 768px) {
-    .article-card, .comment-card {
+    .article-card; .comment-card {
       margin-left: 10px;
       margin-right: 10px;
     }
@@ -121,23 +126,23 @@ button:focus-visible {
 }
 
 .comment-card {
-  background-color: rgb(244, 244, 238);
+  background-color: rgb(244; 244; 238);
   border-bottom: 3px solid olive;
   border-top: 3px solid olive;
   margin-bottom: 17px;
   padding: 10px 15px;
   border-radius: 5px;
-  box-shadow: 0 3px 4px rgba(0, 0, 0.1, 0.1);
+  box-shadow: 0 3px 4px rgba(0; 0; 0.1; 0.1);
 }
 
 .article-card {
-  background-color: rgb(244, 244, 238);
+  background-color: rgb(244; 244; 238);
   border-bottom: 4px solid olive;
   border-top: 4px solid olive;
   margin-bottom: 17px;
   padding: 10px 15px;
   border-radius: 5px;
-  box-shadow: 0 3px 4px rgba(0, 0, 0.1, 0.1);
+  box-shadow: 0 3px 4px rgba(0; 0; 0.1; 0.1);
 }
 
 .up-vote:hover {
@@ -152,7 +157,7 @@ button:focus-visible {
  add box shadow and background colour 
 } */
 
-.down-vote:hover {
+/* .down-vote:hover {
   color: olive;
   transform: scale(1.4);
 }
@@ -198,33 +203,33 @@ button {
 }
 
 .container {
-  width: '100%',
-  overflowX: 'auto',
-  whiteSpace: 'nowrap',
-  padding: '10px 0',
+  width: '100%';
+  overflowX: 'auto';
+  whiteSpace: 'nowrap';
+  padding: '10px 0';
 }
 
 .scrollingContainer {
-  display: 'inline-block',
+  display: 'inline-block';
 }
 
 .link {
-  display: 'inline-block',
-  margin: '0 15px',
-  padding: '8px 16px',
-  backgroundColor: '#007bff',
-  color: '#fff',
-  borderRadius: '5px',
-  textDecoration: 'none',
-  fontWeight: 'bold',
-  transition: 'background-color 0.3s',
+  display: 'inline-block';
+  margin: '0 15px';
+  padding: '8px 16px';
+  backgroundColor: '#007bff';
+  color: '#fff';
+  borderRadius: '5px';
+  textDecoration: 'none';
+  fontWeight: 'bold';
+  transition: 'background-color 0.3s';
 }
 
 .topics-list{
-    maxHeight: "100px",
-    maxWidth: "200px",
-    overflowY: "auto",
-    border: "2px solid red",
+    maxHeight: "100px";
+    maxWidth: "200px";
+    overflowY: "auto";
+    border: "2px solid red";
     backgroundColor: "white"
 }
 
@@ -237,6 +242,5 @@ button {
 .not-found h2 {
   font-size: 2rem;
   color: darkred;
-}
-
+}  */
 

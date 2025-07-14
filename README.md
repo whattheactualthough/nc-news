@@ -1,12 +1,31 @@
-# React + Vite
+# NC News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Deployed version here:
+[https://lulu-news.netlify.app/](https://)
 
-Currently, two official plugins are available:
+# Hosted back-end here:
+[https://lulu-newsroom.onrender.com/](https://)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Project overview
+This is the front end project for a news website, key features include:
+Read articles,
+Filter / categorise articles by topic,
+Order by any relevent value such as date, number of votes, author,
+Interact with articles by up/down voting,
+Filter all comments for a single article,
+Remove comments by id.
 
-## Expanding the ESLint configuration
+# Built with: 
+React 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Clone repo here:
+[https://github.com/whattheactualthough/nc-news](https://)
+
+# Install dependencies 
+npm install
+* requires node.js and npm. 
+
+# Minimum versions:
+Node.js v23.9.0.
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)

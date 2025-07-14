@@ -29,7 +29,7 @@ const ArticleList = ({sortBy, order}) => {
 
   return (
     <>
-    <h2>{topic ? `Articles on ${topic}` : 'All Articles'}</h2>
+    <h2 className="text-gray-700 text-2xl">{topic ? `Articles on ${topic}` : 'All Articles'}</h2>
       <ul className="article-list">
         {articles.map((article) => (
           <ArticleCard key={article.article_id} article={article} />

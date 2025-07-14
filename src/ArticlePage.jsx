@@ -51,7 +51,7 @@ const ArticlePage = () => {
 
   return (
     <div>
-      <h2>{article.title}</h2>
+      <h2 className="bg-red-500">{article.title}</h2>
 
       <img
         src={article.article_img_url}
